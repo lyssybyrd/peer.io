@@ -1,4 +1,4 @@
-# Pulo
+# Peer.io
 Commands to start firebase server
 ```npm -g install firebase-tools
 firebase login
