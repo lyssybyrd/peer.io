@@ -1,6 +1,12 @@
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+
+h1, h2, h3 {
+  font-family: 'Lobster', cursive;
+  text-shadow: 2px 2px #CD5360;
+}
+
 main, #messages-card {
   height: 100%;
   padding-bottom: 0;
