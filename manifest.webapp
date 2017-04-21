@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "name": "Peer.io",
+  "launch_path": "/index.html",
+  "description": "Peer-to-peer tutoring app",
+  "developer": {
+    "name": "Katrina Ezis",
+    "url": "katrinaezis.com"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "Peer.io",
+      "description": "Peer-to-peer tutoring app"
+    }
+  }
+}
