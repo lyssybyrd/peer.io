@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "pulo-934f2"
+    "default": "pulo-934f2",
+    "peerio": "pulo-934f2"
   }
 }
