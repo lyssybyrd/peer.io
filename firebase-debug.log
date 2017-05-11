@@ -1,9 +1,9 @@
 [debug] ----------------------------------------------------------------------
 [debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] CLI Version:  3.6.1
+[debug] CLI Version:  3.7.0
 [debug] Platform:     darwin
 [debug] Node Version: v4.2.1
-[debug] Time:         Fri May 05 2017 10:08:29 GMT-0700 (PDT)
+[debug] Time:         Thu May 11 2017 12:43:58 GMT-0700 (PDT)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
@@ -13,28 +13,23 @@
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Fri May 05 2017 10:08:29 GMT-0700 (PDT)
+ Thu May 11 2017 12:43:58 GMT-0700 (PDT)
 [debug] <<< HTTP RESPONSE 200
 [debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pulo-934f2  
- Fri May 05 2017 10:08:29 GMT-0700 (PDT)
+ Thu May 11 2017 12:44:03 GMT-0700 (PDT)
 [debug] <<< HTTP RESPONSE 200
 [debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pulo-934f2/tokens  
- Fri May 05 2017 10:08:30 GMT-0700 (PDT)
+ Thu May 11 2017 12:44:12 GMT-0700 (PDT)
 [debug] <<< HTTP RESPONSE 200
 [info] Starting Firebase development server...
 [info] 
 [info] Project Directory: /Users/katrinaezis/Capstone/Pulo
 [debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/pulo-934f2  
- Fri May 05 2017 10:08:31 GMT-0700 (PDT)
+ Thu May 11 2017 12:44:14 GMT-0700 (PDT)
 [debug] <<< HTTP RESPONSE 200
 [debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/97969479543/clients/_:getWebAppConfig  
- Fri May 05 2017 10:08:31 GMT-0700 (PDT)
+ Thu May 11 2017 12:44:15 GMT-0700 (PDT)
 [debug] <<< HTTP RESPONSE 200
 [info] Public Directory: ./
 [info] 
 [info] Server listening at: http://localhost:5000
-[debug] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
-    at errnoException (dns.js:26:10)
-    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:77:26)
-[error] 
-[error] Error: An unexpected error has occurred.

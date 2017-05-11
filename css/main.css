@@ -204,3 +204,9 @@ main, #messages-card {
   top: -1px;
   margin-right: 5px;
 }
+
+#container {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+}
