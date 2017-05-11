@@ -62,7 +62,7 @@ main, #messages-card {
   border-top-width: 0;
 }
 .message-container {
-  display: block;
+  /*display: flex;*/
   margin-top: 10px;
   border-top: 1px solid #f3f3f3;
   padding-top: 10px;
@@ -81,13 +81,21 @@ main, #messages-card {
   border-radius: 20px;
 }
 .message-container .spacing {
-  display: table-cell;
+  display: inline-block;
   vertical-align: top;
 }
 .message-container .message {
-  display: table-cell;
-  width: calc(100% - 40px);
+  display: inline-block;
+  width: calc(100% - 80px);
   padding: 5px 0 5px 10px;
+}
+.message-container .close {
+  display: inline-block;
+  text-align: right;
+  float: right;
+}
+.close i {
+  font-size:10px;
 }
 .message-container .name {
   display: inline-block;

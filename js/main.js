@@ -257,6 +257,7 @@ PeerIo.MESSAGE_TEMPLATE =
     '<div class="message-container">' +
       '<div class="spacing"><div class="pic"></div></div>' +
       '<div class="message"></div>' +
+       '<div class="close"><i class="material-icons">close</i></div>' +
       '<div class="name"></div>' +
     '</div>';
 
