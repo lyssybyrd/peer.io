@@ -6,3 +6,5 @@ firebase use --add
 #firebase init (if needed)
 firebase serve
 ```
+
+Progress Bar Library: http://progressbarjs.readthedocs.io/en/latest/#install
