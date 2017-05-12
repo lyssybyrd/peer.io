@@ -30,7 +30,7 @@
 
   <!-- Material Design Lite -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-pink.min.css">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
@@ -58,7 +58,7 @@
 
 
 
-  <script src="js/main.js"></script>
+  <script src="js/main2.js"></script>
 
 </head>
 <body>
@@ -71,9 +71,10 @@
         <h2>peer.io</h2>
       </div>
       <div id="user-container">
-        <div hidden id="user-pic"></div>
-        <div hidden id="user-name"></div>
-        <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+        <!-- taking away hidden for demo -->
+        <div id="user-pic"></div> 
+        <div id="user-name"></div>
+        <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           Sign-out
         </button>
         <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
@@ -87,12 +88,15 @@
     <div id="dashboard-container" class="row">
         <div id="dashboard-subjects" class="col s5">
             <div class="subject">
-                <div class="card blue-grey darken-1">
+                <div id=subjects-title>
+                  <h1>Subjects</h1>
+                </div>
+                <div class="card pink darken-1">
                 <div class="card-content white-text">
                 <span class="card-title center-align">Math</span>
                 </div>
                 <div class="card-action right-align">
-                <a href="#"><i class="material-icons">chat_bubble_outline</i></a>
+                <a href="/forum.html"><i class="material-icons">chat_bubble_outline</i></a>
                 <a href="#"><i class="material-icons">mode_edit</i></a>
                 <a href="#"><i class="material-icons">info_outline</i></a>
                 </div>

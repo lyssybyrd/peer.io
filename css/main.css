@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Raleway');
+
 html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-family: 'Raleway', 'Helvetica', sans-serif;
 }
 
 h2 {
@@ -7,12 +9,44 @@ h2 {
   text-shadow: 2px 2px #CD5360;
 }
 
-h1, h3 {
+h1 {
   font-family: 'Lobster', cursive;
+}
+
+h3, h4 {
+  font-family: 'Raleway', 'Helvetica', sans-serif;
 }
 
 .signin_landing {
   background: url('../images/landing.jpeg') center / cover;
+}
+
+#landing_statement {
+  background-color: rgba(75, 91, 108, 0.20);
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+  text-align: center;
+}
+
+#signin_form {
+  margin: auto;
+}
+
+.yellow {
+  background: rgba(246, 222, 8, 0.7);
+}
+
+.pink {
+  background: rgba(242, 104, 118, 0.7);
+}
+
+.blue {
+  background: rgba(2, 138, 255, 0.7);
+}
+
+#disqus-thread {
+  
 }
 
 main, #messages-card {
