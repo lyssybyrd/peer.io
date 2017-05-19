@@ -12,7 +12,7 @@
 $(document).ready(function () {
 
     // shortcuts for DOM elements
-    this.signupButton = document.getElementById("signup-button");
+    this.signupButton = document.getElementById("sign-in-button");
     this.backButton = document.getElementById('back-button');
     this.signoutButton = document.getElementById("sign-out");
 

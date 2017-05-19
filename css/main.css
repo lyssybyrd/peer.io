@@ -29,10 +29,6 @@ h3, h4 {
   text-align: center;
 }
 
-#signin_form {
-  margin: auto;
-}
-
 .yellow {
   background: rgba(246, 222, 8, 0.7);
 }
@@ -45,8 +41,8 @@ h3, h4 {
   background: rgba(2, 138, 255, 0.7);
 }
 
-#disqus-thread {
-  
+#sign-in-button {
+  margin: auto;
 }
 
 main, #messages-card {

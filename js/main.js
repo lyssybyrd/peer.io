@@ -29,6 +29,8 @@ function PeerIo() {
   this.signOutButton = document.getElementById('sign-out');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
+  this.postInput = document.getElementById('post');
+
   // Saves message on form submit.
   this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
   this.signOutButton.addEventListener('click', this.signOut.bind(this));
@@ -319,6 +321,40 @@ PeerIo.prototype.checkSetup = function() {
         'sure you are running the codelab using `firebase serve`');
   }
 };
+
+////////// ################################################### Forum Stuff ####################################### /////////////
+
+// Loads chat messages history and listens for upcoming ones.
+PeerIo.prototype.loadPosts = function() {
+  // Reference to the /posts/ database path.
+  this.postsRef = this.database.ref('posts');
+  // Make sure we remove all previous listeners.
+  this.postsRef.off();
+};
+
+// Saves a new message on the Firebase DB.
+PeerIo.prototype.savePost = function(e) {
+  e.preventDefault();
+  // Check that the user entered a post and is signed in.
+  if (this.postInput.value && this.checkSignedInWithMessage()) {
+    var currentUser = this.auth.currentUser;
+    // Add a new message entry to the Firebase Database.
+    this.postsRef.push({
+      name: currentUser.displayName,
+      text: this.postInput.value,
+      answered: false,
+
+    }).then(function() {
+      // Clear message text field and SEND button state.
+      PeerIo.resetMaterialTextfield(this.postInput);
+      this.toggleButton();
+    }.bind(this)).catch(function(error) {
+      console.error('Error writing new post to Firebase Database', error);
+    });
+  }
+};
+
+
 
 window.onload = function() {
     
