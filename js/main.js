@@ -19,7 +19,8 @@ function PeerIo() {
   this.messageList = document.getElementById('messages');
   this.messageForm = document.getElementById('message-form');
   this.messageInput = document.getElementById('message');
-  this.submitButton = document.getElementById('submit');
+  this.submitMsgButton = document.getElementById('submit');
+  this.submitPostButton = document.getElementById('submitPost');
   this.submitImageButton = document.getElementById('submitImage');
   this.imageForm = document.getElementById('image-form');
   this.mediaCapture = document.getElementById('mediaCapture');
@@ -30,6 +31,7 @@ function PeerIo() {
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
   this.postInput = document.getElementById('post');
+  this.forum = document.getElementById('forum');
 
   // Saves message on form submit.
   this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
@@ -40,6 +42,8 @@ function PeerIo() {
   var buttonTogglingHandler = this.toggleButton.bind(this);
   this.messageInput.addEventListener('keyup', buttonTogglingHandler);
   this.messageInput.addEventListener('change', buttonTogglingHandler);
+  this.postInput.addEventListener('keyup', buttonTogglingHandler);
+  this.postInput.addEventListener('change', buttonTogglingHandler);
 
   // Events for image upload.
   this.submitImageButton.addEventListener('click', function(e) {
@@ -306,7 +310,7 @@ PeerIo.prototype.displayMessage = function(key, name, text, picUrl, imageUri) {
 // Enables or disables the submit button depending on the values of the input
 // fields.
 PeerIo.prototype.toggleButton = function() {
-  if (this.messageInput.value) {
+  if (this.textInput.value) {
     this.submitButton.removeAttribute('disabled');
   } else {
     this.submitButton.setAttribute('disabled', 'true');
@@ -330,9 +334,54 @@ PeerIo.prototype.loadPosts = function() {
   this.postsRef = this.database.ref('posts');
   // Make sure we remove all previous listeners.
   this.postsRef.off();
+
+
 };
 
-// Saves a new message on the Firebase DB.
+// Template for posts. (same as messages for now)
+PeerIo.POST_TEMPLATE =
+    '<div class="message-container">' +
+      '<div class="spacing"><div class="pic"></div></div>' +
+      '<div class="message"></div>' +
+       '<div class="close"><i class="material-icons">close</i></div>' +
+      '<div class="name"></div>' +
+    '</div>';
+
+PeerIo.prototype.displayPost = function(key, name, text, picUrl, imageUri) {
+  var div = document.getElementById(key);
+  // If an element for that message does not exists yet we create it.
+  if (!div) {
+    var container = document.createElement('div');
+    container.innerHTML = PeerIo.POST_TEMPLATE;
+    div = container.firstChild;
+    div.setAttribute('id', key);
+    this.forum.appendChild(div);
+  }
+  if (picUrl) {
+    div.querySelector('.pic').style.backgroundImage = 'url(' + picUrl + ')';
+  }
+  div.querySelector('.name').textContent = name;
+  var messageElement = div.querySelector('.message'); // the message in the post
+  if (text) { // If the message is text.
+    messageElement.textContent = text;
+    // Replace all line breaks by <br>.
+    messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, '<br>');
+  } else if (imageUri) { // If the message is an image. 
+    var image = document.createElement('img');
+    image.addEventListener('load', function() {
+      this.forum.scrollTop = this.forum.scrollHeight;
+    }.bind(this));
+    this.setImageUrl(imageUri, image);
+    messageElement.innerHTML = '';
+    messageElement.appendChild(image);
+  }
+  // Show the card fading-in and scroll to view the new message.
+  setTimeout(function() {div.classList.add('visible')}, 1);
+  this.forum.scrollTop = this.forum.scrollHeight;
+  this.postInput.focus();
+};
+
+// Saves a new post on the Firebase DB.
 PeerIo.prototype.savePost = function(e) {
   e.preventDefault();
   // Check that the user entered a post and is signed in.
@@ -343,7 +392,8 @@ PeerIo.prototype.savePost = function(e) {
       name: currentUser.displayName,
       text: this.postInput.value,
       answered: false,
-
+      time: Date.now()
+      // subject: some way to pull the subject
     }).then(function() {
       // Clear message text field and SEND button state.
       PeerIo.resetMaterialTextfield(this.postInput);
