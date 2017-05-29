@@ -30,8 +30,8 @@ function PeerIo() {
   this.signOutButton = document.getElementById('sign-out');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
-  this.postInput = document.getElementById('post');
-  this.forum = document.getElementById('forum');
+  // this.postInput = document.getElementById('post');
+  // this.forum = document.getElementById('forum');
 
   // Saves message on form submit.
   this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
@@ -42,8 +42,8 @@ function PeerIo() {
   var buttonTogglingHandler = this.toggleButton.bind(this);
   this.messageInput.addEventListener('keyup', buttonTogglingHandler);
   this.messageInput.addEventListener('change', buttonTogglingHandler);
-  this.postInput.addEventListener('keyup', buttonTogglingHandler);
-  this.postInput.addEventListener('change', buttonTogglingHandler);
+  // this.postInput.addEventListener('keyup', buttonTogglingHandler);
+  // this.postInput.addEventListener('change', buttonTogglingHandler);
 
   // Events for image upload.
   this.submitImageButton.addEventListener('click', function(e) {

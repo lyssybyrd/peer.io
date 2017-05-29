@@ -1,9 +1,19 @@
+// var config = {
+//     apiKey: "AIzaSyBS-_ltv2Ba09OWG5xlr-8jZvEXfexnnJk",
+//     authDomain: "pulo-934f2.firebaseapp.com",
+//     databaseURL: "https://pulo-934f2.firebaseio.com",
+//     projectId: "pulo-934f2",
+//     storageBucket: "pulo-934f2.appspot.com",
+//     messagingSenderId: "97969479543"
+// };
+// firebase.initializeApp(config);
+
 var input;
 $(function() {
-    // input = localStorage.getItem('schoolName');
-    // if (input != null) {
-    //     localStorage.removeItem('schoolName');
-    // }
+    input = localStorage.getItem('schoolName');
+    if (input != null) {
+        localStorage.removeItem('schoolName');
+    }
     d3.csv("./data/Oct1_SchoolLevel_20170118.csv", function(data) {
         // var schools = new Map();
         var schools = {};
@@ -37,7 +47,24 @@ $(function() {
     $("#homeSubmit").click(function() {
         input = $("#autocomplete-input").val();
         localStorage.setItem('schoolName', input);
-        window.location.href = "signin.html";
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            localStorage.setItem('user', user);
+            window.location.replace("http://localhost:5000/subjects.html")
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
         console.log(input)
     })
 })
