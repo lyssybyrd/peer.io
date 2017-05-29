@@ -1,9 +1,9 @@
 var input;
 $(function() {
-    input = localStorage.getItem('schoolName');
-    if (input != null) {
-        localStorage.removeItem('schoolName');
-    }
+    // input = localStorage.getItem('schoolName');
+    // if (input != null) {
+    //     localStorage.removeItem('schoolName');
+    // }
     d3.csv("./data/Oct1_SchoolLevel_20170118.csv", function(data) {
         // var schools = new Map();
         var schools = {};
