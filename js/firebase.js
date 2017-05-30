@@ -8,21 +8,47 @@
 // };
 // firebase.initializeApp(config);
 
-// $(function() {
-//     // firebase.initializeApp(config)
-//     // firebase.database().ref();
+$(function() {
+    var subject = firebase.database().ref('subject');
+    subject.on('value', function(snapshot) {
+        var data = snapshot.val();
+        console.log(data);
+        Object.keys(data).forEach(function(key) {
+            var value = data[key];
 
-//     // var message = firebase.database().ref('message')
+            console.log(value)
+        })
+    })
+    // firebase.initializeApp(config)
+    // firebase.database().ref();
 
-//     // message.push({
-//     //     body: 'this is a message',
-//     //     user: 'this should be a user id'
-//     // })
-//     var school = firebase.database().ref('school');
-//     Object.keys(school).forEach(function(key) {
+    // var message = firebase.database().ref('message')
+
+    // message.push({
+    //     body: 'this is a message',
+    //     user: 'this should be a user id'
+    // })
+
+    // Object.keys(subject).forEach(function(key) {
+    //     console.log(key)
+    // });
+    // subject.push({
+    //     class: 'Algebra II'
+    // })
+    // subject.push({
+    //     class: 'AP English'
+    // })
+    // subject.push({
+    //     class: 'AP Psychology'
+    // })
+    // subject.push({
+    //     class: 'Honors Biology'
+    // })
+    // var school = firebase.database().ref('school');
+    // Object.keys(school).forEach(function(key) {
         
-//     })
-//     $.each(school, function(index, value) {
-//         console.log(school);
-//     })
-// })
+    // })
+    // $.each(school, function(index, value) {
+    //     console.log(school);
+    // })
+})

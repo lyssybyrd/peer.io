@@ -12,6 +12,8 @@
 $(document).ready(function () {
 
     // shortcuts for DOM elements
+    this.userPic = document.getElementById('user-pic');
+    this.userName = document.getElementById('user-name');
     this.signupButton = document.getElementById("sign-in-button");
     this.backButton = document.getElementById('back-button');
     this.signoutButton = document.getElementById("sign-out");
@@ -34,3 +36,24 @@ $(document).ready(function () {
     }
 
 });
+
+function subjects() {
+    this.checkSetup();
+
+    // shortcuts for DOM elements
+    this.userPic = document.getElementById('user-pic');
+    this.userName = document.getElementById('user-name');
+    this.signupButton = document.getElementById("sign-in-button");
+    this.backButton = document.getElementById('back-button');
+    this.signoutButton = document.getElementById("sign-out");
+
+
+}
+
+checkSetup = function() {
+  if (!window.firebase || !(firebase.app instanceof Function) || !firebase.app().options) {
+    window.alert('You have not configured and imported the Firebase SDK. ' +
+        'Make sure you go through the codelab setup instructions and make ' +
+        'sure you are running the codelab using `firebase serve`');
+  }
+};
