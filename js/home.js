@@ -18,7 +18,71 @@ $(function() {
         // var schools = new Map();
         var schools = {};
         // console.log(data[0]["District Name"]);
+        // firebase.database().ref();
+
+        // var school = firebase.database().ref('school');
+        
+        
+        // subject.push({
+        //     name: 'Algebra I',
+        //     students: null,
+        //     questions: null
+        // })
+        // subject.push({
+        //     name: 'AP English',
+        //     students: null,
+        //     questions: null
+        // })
+        // subject.push({
+        //     name: 'AP Psychology',
+        //     students: null,
+        //     questions: null
+        // })
+        // subject.push({
+        //     name: 'Geometry',
+        //     students: null,
+        //     questions: null
+        // })
+        // subject.push({
+        //     name: 'Spanish II',
+        //     students: null,
+        //     questions: null
+        // })
+
+        
         $.each(data, function(index, value) {
+            // var newRef = school.push({
+            //     name: value["School Name"],
+            //     subjects: null
+            // });
+            // console.log(newRef.key)
+            // var subject = firebase.database().ref('school/' + newRef.key + '/subject');
+
+            // subject.push({
+            //     name: 'Algebra I',
+            //     students: null,
+            //     questions: null
+            // })
+            // subject.push({
+            //     name: 'AP English',
+            //     students: null,
+            //     questions: null
+            // })
+            // subject.push({
+            //     name: 'AP Psychology',
+            //     students: null,
+            //     questions: null
+            // })
+            // subject.push({
+            //     name: 'Geometry',
+            //     students: null,
+            //     questions: null
+            // })
+            // subject.push({
+            //     name: 'Spanish II',
+            //     students: null,
+            //     questions: null
+            // })
             schools[value["School Name"]] = null;
             // schools.push(value["School Name"], null);
             // schools.set(value["School Name"], null);

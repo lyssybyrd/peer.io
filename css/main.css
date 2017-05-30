@@ -30,8 +30,40 @@ h3, h4 {
   margin-top: 5%;
 }
 
+.promo i {
+    margin: 40px 0;
+    color: #e91e63;
+    font-size: 7rem;
+    display: block;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.page-footer {
+  background-color: #9fa8da;
+}
+
+.light{
+    font-weight: 300;
+}
+
+#icon_explain {
+  margin-top: 50px;
+}
+
+.promo-caption {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
 .hsv {
-  margin-top: 2%;
+  margin-top: 50px;
 }
 
 .yellow {

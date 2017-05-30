@@ -8,14 +8,21 @@
 // };
 // firebase.initializeApp(config);
 
-$(function() {
-    // firebase.initializeApp(config)
-    firebase.database().ref();
+// $(function() {
+//     // firebase.initializeApp(config)
+//     // firebase.database().ref();
 
-    var message = firebase.database().ref('message')
+//     // var message = firebase.database().ref('message')
 
-    message.push({
-        body: 'this is a message',
-        user: 'this should be a user id'
-    })
-})
+//     // message.push({
+//     //     body: 'this is a message',
+//     //     user: 'this should be a user id'
+//     // })
+//     var school = firebase.database().ref('school');
+//     Object.keys(school).forEach(function(key) {
+        
+//     })
+//     $.each(school, function(index, value) {
+//         console.log(school);
+//     })
+// })
